@@ -1,4 +1,4 @@
-package im.mange.wase
+package im.mange.sews
 
 object Cmd {
   val none: Cmd = () => {}

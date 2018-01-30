@@ -1,8 +1,8 @@
-package im.mange.wase.innards
+package im.mange.sews.innards
 
 import javax.servlet._
 import javax.servlet.http.{HttpServletRequest, HttpServletResponse}
-import im.mange.wase.innards.NaiveJettyHandler.{ResponseOps, toRequest}
+import im.mange.sews.innards.NaiveJettyHandler.{ResponseOps, toRequest}
 import io.shaka.http.Http.HttpHandler
 import io.shaka.http.HttpHeader.httpHeader
 import io.shaka.http.Method.method

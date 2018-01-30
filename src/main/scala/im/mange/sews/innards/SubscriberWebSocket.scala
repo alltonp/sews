@@ -1,6 +1,6 @@
-package im.mange.wase.innards
+package im.mange.sews.innards
 
-import im.mange.wase.Subscriber
+import im.mange.sews.Subscriber
 import org.eclipse.jetty.websocket.api.{Session, WebSocketAdapter}
 
 //TODO: email could be passed in here ... (from header/cookie/request param whatever)

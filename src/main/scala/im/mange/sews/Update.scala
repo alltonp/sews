@@ -1,6 +1,6 @@
-package im.mange.wase
+package im.mange.sews
 
-import im.mange.wase.innards.Subscribers
+import im.mange.sews.innards.Subscribers
 
 trait Update[IN, MODEL, OUT] {
   val msgCodec: JsonCodec[IN, OUT]

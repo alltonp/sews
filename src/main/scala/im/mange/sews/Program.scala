@@ -1,6 +1,6 @@
-package im.mange.wase
+package im.mange.sews
 
-import im.mange.wase.innards.WebSocketProgram
+import im.mange.sews.innards.WebSocketProgram
 
 case class Program[IN, MODEL, OUT](private var model: MODEL,
                                    private val update: Update[IN, MODEL, OUT],
@@ -9,7 +9,7 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
                                    private val debug: Boolean = false
                                   ) extends WebSocketProgram {
 
-  private [wase] val subscribers = update.subscribers
+  private [sews] val subscribers = update.subscribers
 
   override def onInit(subscriber: Subscriber): Unit = init(subscriber).foreach(doUpdate(_, subscriber))
   override def onFini(subscriber: Subscriber): Unit = fini(subscriber).foreach(doUpdate(_, subscriber))

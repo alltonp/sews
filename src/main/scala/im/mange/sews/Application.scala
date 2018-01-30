@@ -1,6 +1,6 @@
-package im.mange.wase
+package im.mange.sews
 
-import im.mange.wase.innards._
+import im.mange.sews.innards._
 import io.shaka.http.Http.HttpHandler
 
 object Application {

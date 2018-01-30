@@ -1,4 +1,4 @@
-package im.mange.wase.innards
+package im.mange.sews.innards
 
 import org.eclipse.jetty.server.handler.{AbstractHandler, ContextHandler, ContextHandlerCollection}
 

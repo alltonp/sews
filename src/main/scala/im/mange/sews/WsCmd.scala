@@ -1,6 +1,6 @@
-package im.mange.wase
+package im.mange.sews
 
-import im.mange.wase.innards.Subscribers
+import im.mange.sews.innards.Subscribers
 
 case class WsCmd[IN, OUT](codec: JsonCodec[IN, OUT], all: Subscribers) {
   def send(msg: OUT, to: Subscriber): Cmd = () => { all.send(jsonise(msg), to) }

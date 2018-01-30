@@ -1,9 +1,9 @@
-package im.mange.wase.innards
+package im.mange.sews.innards
 
-import im.mange.wase.Subscriber
+import im.mange.sews.Subscriber
 
 trait WebSocketProgram {
-  private [wase] val subscribers: Subscribers
+  private [sews] val subscribers: Subscribers
 
   def onInit(subscriber: Subscriber): Unit
   def onFini(subscriber: Subscriber): Unit

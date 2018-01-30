@@ -1,6 +1,6 @@
-package im.mange.wase.innards
+package im.mange.sews.innards
 
-import im.mange.wase.Subscriber
+import im.mange.sews.Subscriber
 
 case class Subscribers(private var subscribers: Seq[Subscriber], subscriptionDebug: Boolean = false, messageDebug: Boolean = false) {
   def subscribe(subscriber: Subscriber): Unit = {

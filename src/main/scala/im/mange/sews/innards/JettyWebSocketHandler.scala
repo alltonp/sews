@@ -1,4 +1,4 @@
-package im.mange.wase.innards
+package im.mange.sews.innards
 
 import org.eclipse.jetty.websocket.server.WebSocketHandler
 import org.eclipse.jetty.websocket.servlet.{ServletUpgradeRequest, ServletUpgradeResponse, WebSocketCreator, WebSocketServletFactory}

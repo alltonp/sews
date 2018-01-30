@@ -1,4 +1,4 @@
-package im.mange.wase
+package im.mange.sews
 
 //TODO: maybe have an atomic counter in here
 //TODO: defo have user (aka email) in here
