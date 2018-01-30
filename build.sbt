@@ -14,6 +14,8 @@ resolvers ++= Seq(
   "Tim Tennant's repo" at "http://dl.bintray.com/timt/repo/"
 )
 
+//TODO: upgrade jetty
+//TODO: make jetty provided
 libraryDependencies ++= Seq(
   "io.shaka" %% "naive-http" % "94",
   "org.eclipse.jetty.websocket" % "websocket-server" % "9.2.10.v20150310", // % "provided",
