@@ -1,6 +1,6 @@
 package im.mange.sews.innards
 
-import im.mange.sews.Subscriber
+import im.mange.sews.{Subscriber, Subscribers}
 
 trait WebSocketProgram {
   private [sews] val subscribers: Subscribers

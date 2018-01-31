@@ -13,5 +13,8 @@ case class JsonCodec[IN, OUT](decoder: DecodeJson[IN], encoder: EncodeJson[OUT])
         result.getOr(throw new RuntimeException(s"error $result decoding: $json"))
     }
 
-  def encode(out: OUT): String = encoder.encode(out).nospaces
+  def encode(out: OUT, pretty: Boolean = false): String = {
+    val json = encoder.encode(out)
+    if (pretty) json.spaces2 else json.nospaces
+  }
 }
