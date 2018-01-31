@@ -4,5 +4,5 @@ trait Store {
   def exists(key: String): Boolean
   def load(key: String): String
   def save(key: String, value: String): Unit
-  def keys: List[String]
+  def list: List[String]
 }
