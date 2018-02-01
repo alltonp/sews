@@ -7,7 +7,7 @@ organization := "im.mange"
 
 version := Try(sys.env("TRAVIS_BUILD_NUMBER")).map("0.0." + _).getOrElse("1.0-SNAPSHOT")
 
-scalaVersion := "2.12.3"
+scalaVersion := "2.12.4"
 
 resolvers ++= Seq(
   "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/",
@@ -15,7 +15,7 @@ resolvers ++= Seq(
 )
 
 //TODO: upgrade jetty
-//TODO: make jetty provided
+//TODO: make at least jetty "provided", ideally others too
 libraryDependencies ++= Seq(
   "io.shaka" %% "naive-http" % "94",
   "org.eclipse.jetty.websocket" % "websocket-server" % "9.2.10.v20150310", // % "provided",
