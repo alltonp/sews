@@ -6,7 +6,7 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
                                    private val update: Update[IN, MODEL, OUT],
                                    private val init: (Subscriber => Option[IN]) = (s: Subscriber) => None,
                                    private val fini: (Subscriber => Option[IN]) = (s: Subscriber) => None,
-                                   private val debug: Boolean = false
+                                   private val updateDebug: Boolean = false
                                   ) extends WebSocketProgram {
 
   private [sews] val subscribers = update.subscribers
@@ -29,12 +29,12 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
         case e: Exception =>
           //TIP: when we stop the server we get a lot of: RemoteEndpoint unavailable, current state [CLOSING], expecting [OPEN or CONNECTED]
           //... maybe should protect against this
-          print("* Error during update: " + e.getMessage ++ "\n" ++ e.getStackTrace.toList.mkString("\n"))
+          println("* Error during update: " + e.getMessage ++ "\n" ++ e.getStackTrace.toList.mkString("\n"))
           model = modelBeforeUpdate
       }
 
       finally {
-        println(s"- Update: $msg to model now: $model -> was: $modelBeforeUpdate")
+        if (updateDebug) println(s"- Update: $msg to model now: $model -> was: $modelBeforeUpdate")
       }
     }
   }
