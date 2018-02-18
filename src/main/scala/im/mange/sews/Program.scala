@@ -31,6 +31,10 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
           //... maybe should protect against this
           println("* Error during update: " + e.getMessage ++ "\n" ++ e.getStackTrace.toList.mkString("\n"))
           model = modelBeforeUpdate
+
+          //TODO: should we re-throw these? for closed connections defo not
+          //TODO: should we catch and throw errors?
+          //TODO: if in dev then we should tell client that an error has occured
       }
 
       finally {
