@@ -16,6 +16,13 @@ case class Subscribers(private var subscribers: Seq[Subscriber], subscriptionDeb
     }
   }
 
+  def unsubscribeAll = {
+    synchronized {
+      subscribers.foreach(unsubscribe)
+      if (subscriptionDebug) println(s"- unsubscribeAll now have ${subscribers.size}")
+    }
+  }
+
   def send(message: String, to: Subscriber): Unit = {
     to.send(message)
     if (messageDebug) println(s"- send: $message to $to")
