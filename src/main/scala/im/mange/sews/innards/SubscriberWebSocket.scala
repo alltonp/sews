@@ -22,6 +22,6 @@ class SubscriberWebSocket(program: WebSocketProgram) extends WebSocketAdapter {
   }
 
   override def onWebSocketText(message: String): Unit = {
-    program.onMessage(message, subscriber)
+    program.onMessage(message, Some(subscriber))
   }
 }

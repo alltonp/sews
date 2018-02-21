@@ -11,11 +11,11 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
 
   private [sews] val subscribers = update.subscribers
 
-  override def onInit(subscriber: Subscriber): Unit = init(subscriber).foreach(doUpdate(_, subscriber))
-  override def onFini(subscriber: Subscriber): Unit = fini(subscriber).foreach(doUpdate(_, subscriber))
-  override def onMessage(message: String, from: Subscriber): Unit = doUpdate(update.msgCodec.decode(message), from)
+  override def onInit(subscriber: Subscriber): Unit = init(subscriber).foreach(doUpdate(_, Some(subscriber)))
+  override def onFini(subscriber: Subscriber): Unit = fini(subscriber).foreach(doUpdate(_, Some(subscriber)))
+  override def onMessage(message: String, from: Option[Subscriber]): Unit = doUpdate(update.msgCodec.decode(message), from)
 
-  private def doUpdate(msg: IN, from: Subscriber): Unit = {
+  private def doUpdate(msg: IN, from: Option[Subscriber]): Unit = {
     val modelBeforeUpdate = model
 
     synchronized {

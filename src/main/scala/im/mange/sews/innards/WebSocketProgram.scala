@@ -7,7 +7,7 @@ trait WebSocketProgram {
 
   def onInit(subscriber: Subscriber): Unit
   def onFini(subscriber: Subscriber): Unit
-  def onMessage(message: String, from: Subscriber): Unit
+  def onMessage(message: String, from: Option[Subscriber]): Unit
 
   def init(subscriber: Subscriber): Unit = {
     subscribers.subscribe(subscriber)
