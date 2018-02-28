@@ -22,7 +22,7 @@ libraryDependencies ++= Seq(
   "org.eclipse.jetty.websocket" % "websocket-server" % "9.2.10.v20150310", // % "provided",
   //9.4.8.v20171121 - see http://central.maven.org/maven2/org/eclipse/jetty/jetty-distribution/
   "com.github.alexarchambault" %% "argonaut-shapeless_6.2" % "1.2.0-M4",
-  "org.reactormonk" % "elmtypes_2.12" % "0.3",
+  "org.reactormonk" % "elmtypes_2.12" % "0.4",
   "im.mange" %% "little" % "[0.0.49,0.0.999]" % "provided"
 )
 
