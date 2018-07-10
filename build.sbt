@@ -14,7 +14,7 @@ resolvers ++= Seq(
   "Tim Tennant's repo" at "http://dl.bintray.com/timt/repo/"
 )
 
-//TODO: mske it possible to run me by myself ... or maybe just add examples ...
+//TODO: make it possible to run me by myself ... or maybe just add examples ...
 //TODO: upgrade jetty
 //TODO: make at least jetty "provided", ideally others too
 libraryDependencies ++= Seq(
