@@ -33,4 +33,6 @@ case class Subscribers(private var subscribers: Seq[Subscriber], subscriptionDeb
     subscribers.foreach(_.send(message))
     if (messageDebug) println(s"- sendAll: $message - ${subscribers.size} subscribers")
   }
+
+  def all = subscribers
 }
