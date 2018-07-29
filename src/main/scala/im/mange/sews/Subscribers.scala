@@ -16,7 +16,7 @@ case class Subscribers(private var subscribers: Seq[Subscriber], subscriptionDeb
     }
   }
 
-  def unsubscribeAll = {
+  def unsubscribeAll(): Unit = {
     synchronized {
       subscribers.foreach(unsubscribe)
       if (subscriptionDebug) println(s"- unsubscribeAll now have ${subscribers.size}")
@@ -34,5 +34,5 @@ case class Subscribers(private var subscribers: Seq[Subscriber], subscriptionDeb
     if (messageDebug) println(s"- sendAll: $message - ${subscribers.size} subscribers")
   }
 
-  def all = subscribers
+  def all: Seq[Subscriber] = subscribers
 }
