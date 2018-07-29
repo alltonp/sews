@@ -2,7 +2,6 @@ package im.mange.sews.db
 
 import im.mange.sews.JsonCodec
 
-//TODO: better package name - obstinate? it's a key, value store ultimately, blobby?
 //TODO: is this Registry
 //TODO: make a redis version
 //TODO: make a postgres version

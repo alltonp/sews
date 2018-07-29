@@ -2,6 +2,7 @@ package im.mange.sews
 
 import argonaut.{DecodeJson, EncodeJson}
 
+//TODO: consider splitting these so we can mixin just what we need ..
 case class JsonCodec[IN, OUT](decoder: DecodeJson[IN], encoder: EncodeJson[OUT]) {
   import argonaut.{Parse, _}
 

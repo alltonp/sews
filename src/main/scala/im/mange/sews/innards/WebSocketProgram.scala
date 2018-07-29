@@ -20,7 +20,7 @@ trait WebSocketProgram {
   }
 
   def finiAll(): Unit = {
-    subscribers.unsubscribeAll
+    subscribers.unsubscribeAll()
     //TODO: we should probably fire onFini for all ...
   }
 }
