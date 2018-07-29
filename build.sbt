@@ -1,5 +1,5 @@
 import scala.util.Try
-
+import xerial.sbt.Sonatype._
 
 name := "sews"
 
@@ -14,23 +14,23 @@ resolvers ++= Seq(
   "Tim Tennant's repo" at "http://dl.bintray.com/timt/repo/"
 )
 
-//TODO: make it possible to run me by myself ... or maybe just add examples ...
-//TODO: upgrade jetty
-//TODO: make at least jetty "provided", ideally others too
+unmanagedSourceDirectories in Test += baseDirectory.value / "src" / "example" / "scala"
+
 libraryDependencies ++= Seq(
   "io.shaka" %% "naive-http" % "94",
   "org.eclipse.jetty.websocket" % "websocket-server" % "9.2.10.v20150310", // % "provided",
   //9.4.8.v20171121 - see http://central.maven.org/maven2/org/eclipse/jetty/jetty-distribution/
   "com.github.alexarchambault" %% "argonaut-shapeless_6.2" % "1.2.0-M4",
   "org.reactormonk" % "elmtypes_2.12" % "0.4",
+  //60
   "im.mange" %% "little" % "[0.0.49,0.0.999]" % "provided"
 )
 
 sonatypeSettings
 
-publishTo <<= version { project_version ⇒
+publishTo := {
   val nexus = "https://oss.sonatype.org/"
-  if (project_version.trim.endsWith("SNAPSHOT"))
+  if (isSnapshot.value)
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
