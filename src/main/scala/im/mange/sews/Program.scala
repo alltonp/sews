@@ -42,4 +42,6 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
       }
     }
   }
+
+  def copyServerModel: MODEL = model //TIP: this could be dirty obvs
 }
