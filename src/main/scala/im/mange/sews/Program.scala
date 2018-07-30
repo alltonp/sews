@@ -43,5 +43,6 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
     }
   }
 
+  //TODO: instead of this (or as well as) we could make doUpdate return MODEL.
   def copyServerModel: MODEL = model //TIP: this could be dirty obvs
 }
