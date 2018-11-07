@@ -17,9 +17,9 @@ case class Program[IN, MODEL, OUT](private var model: MODEL,
   override def onMessage(message: String, from: Option[Subscriber]): Unit = doUpdate(update.msgCodec.decode(message), from)
 
   private def doUpdate(msg: IN, from: Option[Subscriber]): Unit = {
-    val modelBeforeUpdate = model
-
     synchronized {
+      val modelBeforeUpdate = model
+
       try {
         val (model_, cmd: Cmd) = update.update(msg, model, from)
         model = model_
